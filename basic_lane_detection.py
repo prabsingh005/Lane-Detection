@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-cap = cv2.VideoCapture(r'D:\GitHub_repositary\OpenCV\solidYellowLeft.mp4')
+cap = cv2.VideoCapture(r'D:\computer vision\drive-download-20251028T233500Z-1-001\Basic-Lane-Detection\solidYellowLeft.mp4')
 
 while True:
     ret, frame = cap.read()
@@ -35,6 +35,7 @@ while True:
     # cv2.polylines(frame, trapezoid, True, (255, 0, 0), 2)
     
     cv2.imshow('Lane Detection', frame)
+    cv2.VideoWriter('output.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 20.0, (width, height))
 
     if cv2.waitKey(30) & 0xFF == ord('q'):
         break
